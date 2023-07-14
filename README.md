@@ -3,12 +3,13 @@
 ## Context
 
 Over 9000 rare diseases have been described and up to 350 million people worldwide suffer from one. While individually, these diseases are rare (affecting 5-6% of the population),  in aggregate they represent a substantial challenge to global health systems. The majority of rare disorders are genetic in origin, with children under the age of five disproportionately affected (83%). Due to disease heterogeneity and unknown variant pathogenicity, about half of patients with rare genetic diseases never receive a causal diagnosis. However, making a molecular diagnosis with current technologies and knowledge is often still a challenge.
-
-**Aim :**
 Thus understanding the clinically implications of genetic and phenotypic variation is crucial for delivering an early diagnose and treatment for these patients.
 
-## Dataset details
+**Aim :**
+Predict genetics disorder and disorder subclass based on medical information about children who suffer from genetic disorders.
 
+## Dataset details
+Data was obtained from HackerEarth Machine Learning Challenge.
 The raw dataset contains the following files:
 - train.csv : 22083 rows x 45 columns
 - test.csv : 9465 rows x 43 columns
@@ -55,3 +56,30 @@ The columns that are used have the following information:
 | Disorder Subclass 	| Represents the subclass of the disorder 	|
 
 ## Project:
+Libraries used:
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- sklearn:
+  - LabelEncoder
+  - train_test_split
+  - StandardScaler
+  - LogisticRegression
+  - DecisionTreeClassifier
+  - KNeighborsClassifier
+  - GaussianNB
+  - SVC
+  - BaggingClassifier
+  - RandomForestClassifier
+  - GradientBoostingClassifier
+  - AdaBoostClassifier
+  - GridSearchCV
+  - metrics
+- xgboost
+- catboost
+- lightgbm
+- pickle
+
+# Exploratory Data Analysis
+
