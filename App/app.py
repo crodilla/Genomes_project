@@ -18,13 +18,13 @@ ALLOWED_EXTENSIONS = {'csv', 'txt', 'xls', 'xlsx'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Route for the GitHub page
-@app.route('/<convertidor: nombre_variable>', methods=['POST'])
-def git_update():
-    repo = git.Repo('./Genomes_project')
-    origin = repo.remotes.origin
-    repo.create_head('main', origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
-    origin.pull()
-    return "", 200
+#@app.route('/<convertidor: nombre_variable>', methods=['POST'])
+#def git_update():
+#    repo = git.Repo('./Genomes_project')
+#    origin = repo.remotes.origin
+#    repo.create_head('main', origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
+#    origin.pull()
+#    return "", 200
 
 @app.route('/', methods=['GET'])
 def home():
@@ -59,8 +59,11 @@ def predict():
             data = scaler.transform(data)
             data = data.reshape(1, -1)
             prediction = model.predict(data)
+            prediction2 = model2.predict(data)
             result = df.inverse_transform(prediction)
+            result2 = df.inverse_transform(prediction2)
             df.insert(0, 'prediction', result)
+            df.insert(0, 'prediction2', prediction2)
             return render_template('predict_table.html', tables=[df.to_html(classes='data', header='True')])
         
         elif length == 1:
