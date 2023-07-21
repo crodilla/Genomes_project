@@ -10,7 +10,7 @@ os.chdir(os.path.dirname(__file__))
 
 app = Flask(__name__)
 # Load the configuration
-app.config['DEBUG'] = True
+# app.config['DEBUG'] = True
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'csv', 'txt', 'xls', 'xlsx'}
@@ -31,7 +31,7 @@ def home():
     return render_template('index.html')
 
 @app.route('/params', methods=['GET'])
-def home():
+def params():
     return render_template('params.html')
 
 def allowed_file(filename):
@@ -42,32 +42,36 @@ def allowed_file(filename):
 def predict():
     if 'choose_file' not in request.files:
         flash('No file part')
-        return redirect(url_for(home))
+        # return to home page
+        return redirect(url_for('home'))
     file = request.files['choose_file']
 
     # If user does not select file, browser submits an empty file without filename
     if file and allowed_file(file.filename):
         data = pd.read_csv(file)
         length = len(data)
-        scaler = pickle.load(open('scaler.pkl', 'rb'))
-        model = pickle.load(open('model.pkl', 'rb'))
-        scaled_data = scaler.transform(data)
-        predicion = model.predict(scaled_data)
+        gen_model = pickle.load(open('genetic_model_def.pkl', 'rb'))
+        sub_model = pickle.load(open('subclass_model_def.pkl', 'rb'))
+        gen_prediction = gen_model.predict(data)
+        sub_prediction = sub_model.predict(data)
 
         if length > 1:
             df = pd.DataFrame(data, columns=data.columns)
-            data = scaler.transform(data)
             data = data.reshape(1, -1)
-            prediction = model.predict(data)
-            prediction2 = model2.predict(data)
-            result = df.inverse_transform(prediction)
-            result2 = df.inverse_transform(prediction2)
-            df.insert(0, 'prediction', result)
-            df.insert(0, 'prediction2', prediction2)
+            gen_prediction = gen_model.predict(data)
+            sub_prediction = sub_model.predict(data)
+            gen_result = df.inverse_transform(gen_prediction)
+            sub_result = df.inverse_transform(sub_prediction)
+            df.insert(0, 'Genetic_disorder', gen_result)
+            df.insert(0, 'Disorder_subclass', sub_result)
             return render_template('predict_table.html', tables=[df.to_html(classes='data', header='True')])
         
         elif length == 1:
-            return render_template('predict.html', result = predicion[0])
+            return render_template('predict.html', disorder = data.inverse_transform(gen_prediction),  subclass = data.inverse_transform(sub_prediction))
+
+if __name__ == '__main__':
+    app.run(debug=True)
+ 
 
         
         

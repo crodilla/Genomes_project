@@ -58,13 +58,13 @@
     
         <p class="lead">Prediction of genetic disease in children.</p>
         
-        <form action="predict" method="POST" enctype="multipart/form-data">
+        <form action="{{url_for ('predict')}}" method="POST" enctype="multipart/form-data">
                
             <div class="file-upload text-center width-upload">
                 <div class="file-select">
                     <div class="file-select-button" id="fileName">Choose File</div>
                     <div class="file-select-name" id="noFile">No file chosen...</div> 
-                    <input type="file" name="chooseFile" id="chooseFile">
+                    <input type="file" name="chooseFile" id="chooseFile" required="required">
                 </div>
             </div>
             <p class="lead"><br></p>

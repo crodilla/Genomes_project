@@ -1,0 +1,2 @@
+Patient_Age,Mother_inherit,Father_inherit,Maternal_gene,Paternal_gene,Blood_cell_count,Mother_age,Father_age,Status,Respiratory_rate,Heart_rate,Follow_up,Gender,Place_birth,Folic_acid,Maternal_illness,Assisted_conception,History_previous_pregnancies,Number_abortions,Birth_defects,WBC_count,Blood_test,Symptom1,Symptom2,Symptom3,Symptom4,Symptom5
+2.0,1.0,0.0,1.0,0.0,4.760603,34.886364,42.37832,0.0,0.0,0.0,0.0,2.0,1.0,0.0,0.0,0.0,1.0,1.9719101,0.0,9.857562,3.0,1.0,1.0,1.0,1.0,1.0
