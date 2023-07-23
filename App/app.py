@@ -50,8 +50,8 @@ def predict():
     if file and allowed_file(file.filename):
         data = pd.read_csv(file)
         length = len(data)
-        gen_model = pickle.load(open('genetic_model_def.pkl', 'rb'))
-        sub_model = pickle.load(open('subclass_model_def.pkl', 'rb'))
+        gen_model = pickle.load(open('genetic_model_def.pickel', 'rb'))
+        sub_model = pickle.load(open('subclass_model_def.pickel', 'rb'))
         gen_prediction = gen_model.predict(data)
         sub_prediction = sub_model.predict(data)
 
