@@ -24,36 +24,218 @@
         <h1>Prediction</h1>
         
         <form action="{{url_for('predict')}}" method="POST">
-            <input type="text" name="Patient_Age" placeholder="Patient's age" required="required">
-            <input type="text" name="Mother_inherit" placeholder="Mother_inherit" required="required">
-            <input type="text" name="Father_inherit" placeholder="Father_inherit" required="required">
-            <input type="text" name="Blood_cell_count" placeholder="Blood_cell_count" required="required">
-            <input type="text" name="Mother_age" placeholder="Mother_age" required="required">
-            <input type="text" name="Father_age" placeholder="Father_age" required="required">
-            <input type="text" name="Status" placeholder="Status" required="required">
-            <input type="text" name="Respiratory_rate" placeholder="Respiratory_rate" required="required">
-            <input type="text" name="Heart_rate" placeholder="Heart_rate" required="required">
-            <input type="text" name="Follow_up" placeholder="Follow_up" required="required">
-            <input type="text" name="Gender" placeholder="Gender" required="required">
-            <input type="text" name="Place_birth" placeholder="Place_birth" required="required">
-            <input type="text" name="Folic_acid" placeholder="Folic_acid" required="required">
-            <input type="text" name="Maternal_illness" placeholder="Maternal_illness" required="required">
-            <input type="text" name="Assisted_conception" placeholder="Assisted_conception" required="required">
-            <input type="text" name="History_previous_pregnancies" placeholder="History_previous_pregnancies" required="required">
-            <input type="text" name="Number_abortions" placeholder="Number_abortions" required="required">
-            <input type="text" name="Birth_defects" placeholder="Birth_defects" required="required">
-            <input type="text" name="WBC_count" placeholder="WBC_count" required="required">
-            <input type="text" name="Blood_test" placeholder="Blood_test" required="required">
-            <input type="text" name="Symptom1" placeholder="Symptom1" required="required">
-            <input type="text" name="Symptom2" placeholder="Symptom2" required="required">
-            <input type="text" name="Symptom3" placeholder="Symptom3" required="required">
-            <input type="text" name="Symptom4" placeholder="Symptom4" required="required">
-            <input type="text" name="Symptom5" placeholder="Symptom5" required="required">
+            
+            <label for="Patient_Age">Patient's age</label>
+            <input type="range" id="slider1" name="Patient_Age" min="0" max="14" step="1">
+            <span id="slider1_value">Valor: 4</span>
+            <input type="hidden" id="hidden_variable1" name="hidden_variable1" value="4">
+            <br>
+            <label for ="Mother_inherit">Inherited from mother</label>
+            <select id="Mother_inherit" name="Mother_inherit" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for ="Father_inherit">Inherited from father</label>
+            <select id="Father_inherit" name="Father_inherit" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="Blood_cell_count">Blood cell count (mcL)</label>
+            <input type="range" id="slider2" name="Blood_cell_count" min="4" max="6" step="1">
+            <span id="slider2_value">Valor: 4</span>
+            <input type="hidden" id="hidden_variable2" name="hidden_variable2" value="4">
+            <br>
+            <label for="Mother_age">Mother's age</label>
+            <input type="range" id="slider3" name="Mother_age" min="18" max="60" step="1">
+            <span id="slider3_value">Valor: 34</span>
+            <input type="hidden" id="hidden_variable3" name="hidden_variable3" value="34">
+            <br>
+            <label for="Father_age">Father's age</label>
+            <input type="range" id="slider4" name="Father_age" min="18" max="70" step="1">
+            <span id="slider4_value">Valor: 40</span>
+            <input type="hidden" id="hidden_variable4" name="hidden_variable4" value="40">
+            <br>
+            <label for="Status">Status</label>
+            <select id="Status" name="Status" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="Respiratory_rate">Respiratory rate</label>
+            <select id="Respiratory_rate" name="Respiratory_rate" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="Heart_rate">Heart rate</label>
+            <select id="Heart_rate" name="Heart_rate" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="Follow_up">Follow up</label>
+            <select id="Follow_up" name="Follow_up" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="Gender">Gender</label>
+            <select id="Gender" name="Gender" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+                <option value="3">2</option>
+            </select>
+            <br>
+            <label for ="Place_birth">Place of birth</label>
+            <select id="Place_birth" name="Place_birth" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for ="Folic_acid">Folic acid take</label>
+            <select id="Folic_acid" name="Folic_acid" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for ="Maternal_illness">Maternal illness</label>
+            <select id="Maternal_illness" name="Maternal_illness" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for ="Assisted_conception">Assisted conception</label>
+            <select id="Assisted_conception" name="Assisted_conception" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for ="History_previous_pregnancies">History of previous pregnancies</label>
+            <select id="History_previous_pregnancies" name="History_previous_pregnancies" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="Number_abortions">Number of abortions</label>
+            <input type="range" id="slider5" name="Number_abortions" min="0" max="5" step="1">
+            <span id="slider5_value">Valor: 2</span>
+            <input type="hidden" id="hidden_variable5" name="hidden_variable5" value="2">
+            <br>
+            <label for ="Birth_defects">Birth defects</label>
+            <select id="Birth_defects" name="Birth_defects" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="WBC_count">WBC count</label>
+            <input type="range" id="slider6" name="WBC_count" min="3" max="12" step="1">
+            <span id="slider6_value">Valor: 6</span>
+            <input type="hidden" id="hidden_variable6" name="hidden_variable6" value="6">
+            <br>
+            <label for="Blood_test">Blood test</label>
+            <select id="Blood_test" name="Blood_test" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+                <option value="3">2</option>
+                <option value="4">3</option>
+            </select>
+            <br>
+            <label for="Symptom1">Symptom 1</label>
+            <select id="Symptom1" name="Symptom1" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="Symptom2">Symptom 2</label>
+            <select id="Symptom2" name="Symptom2" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="Symptom3">Symptom 3</label>
+            <select id="Symptom3" name="Symptom3" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="Symptom4">Symptom 4</label>
+            <select id="Symptom4" name="Symptom4" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br>
+            <label for="Symptom5">Symptom 5</label>
+            <select id="Symptom5" name="Symptom5" required="required">
+                <option value="1">0</option>
+                <option value="2">1</option>
+            </select>
+            <br><br>
             <button type="submit">Predict</button>
 
         </form>
-        {{prediction_text}}
+        
+        
+        <p>{{prediction_text}}
+        </p>
 
+        <script>
+            const slider1 = document.getElementById("slider1");
+            const slider1Value = document.getElementById("slider1_value");
+            const hiddenVariable1 = document.getElementById("hidden_variable1");
+    
+            slider1.oninput = function() {
+                slider1Value.textContent = `Valor: ${slider1.value}`;
+                hiddenVariable1.value = slider1.value;
+            }
+    
+            const slider2 = document.getElementById("slider2");
+            const slider2Value = document.getElementById("slider2_value");
+            const hiddenVariable2 = document.getElementById("hidden_variable2");
+    
+            slider2.oninput = function() {
+                slider2Value.textContent = `Valor: ${slider2.value}`;
+                hiddenVariable2.value = slider2.value;
+            }
+    
+            const slider3 = document.getElementById("slider3");
+            const slider3Value = document.getElementById("slider3_value");
+            const hiddenVariable3 = document.getElementById("hidden_variable3");
+    
+            slider3.oninput = function() {
+                slider3Value.textContent = `Valor: ${slider3.value}`;
+                hiddenVariable3.value = slider3.value;
+            }
+
+            const slider4 = document.getElementById("slider4");
+            const slider4Value = document.getElementById("slider4_value");
+            const hiddenVariable4 = document.getElementById("hidden_variable4");
+    
+            slider4.oninput = function() {
+                slider4Value.textContent = `Valor: ${slider4.value}`;
+                hiddenVariable4.value = slider4.value;
+            }
+
+            const slider5 = document.getElementById("slider5");
+            const slider5Value = document.getElementById("slider5_value");
+            const hiddenVariable5 = document.getElementById("hidden_variable5");
+    
+            slider5.oninput = function() {
+                slider5Value.textContent = `Valor: ${slider5.value}`;
+                hiddenVariable5.value = slider5.value;
+            }
+
+            const slider6 = document.getElementById("slider6");
+            const slider6Value = document.getElementById("slider6_value");
+            const hiddenVariable6 = document.getElementById("hidden_variable6");
+    
+            slider6.oninput = function() {
+                slider6Value.textContent = `Valor: ${slider6.value}`;
+                hiddenVariable6.value = slider6.value;
+            }
+        </script>
+        
     </main>
 
     <footer class="mt-auto text-white-50 mb-0">
@@ -62,6 +244,23 @@
     <br><br>
 
 </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
 
+<script>
+    $('#chooseFile').bind('change', function () {
+    var filename = $("#chooseFile").val();
+    if (/^\s*$/.test(filename)) {
+        $(".file-upload").removeClass('active');
+        $("#noFile").text("No file chosen..."); 
+    }
+    else {
+        $(".file-upload").addClass('active');
+        $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+    }
+    });
+</script>
 </body>
 </html>
