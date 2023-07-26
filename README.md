@@ -1,5 +1,7 @@
 # Genomes-project
 
+<p align="center"><img src="https://socialify.git.ci/crodilla/Genomes_project/image?font=Rokkitt&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Solid&amp;theme=Auto" alt="project-image"></p>
+
 ## Context
 
 Over 9000 rare diseases have been described and up to 350 million people worldwide suffer from one. While individually, these diseases are rare (affecting 5-6% of the population),  in aggregate they represent a substantial challenge to global health systems. The majority of rare disorders are genetic in origin, with children under the age of five disproportionately affected (83%). Due to disease heterogeneity and unknown variant pathogenicity, about half of patients with rare genetic diseases never receive a causal diagnosis. However, making a molecular diagnosis with current technologies and knowledge is often still a challenge.
@@ -57,30 +59,26 @@ The columns that are used have the following information:
 | Disorder Subclass 	| Represents the subclass of the disorder 	|
 
 ## Project:
-Libraries used:
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   Python - version 3.11
+*   Flask
+*   CSS
+*   JavaScript
+
+Requirements:
 - pandas
 - numpy
 - matplotlib
+- plotly.express
 - seaborn
-- sklearn:
-  - LabelEncoder
-  - train_test_split
-  - StandardScaler
-  - LogisticRegression
-  - DecisionTreeClassifier
-  - KNeighborsClassifier
-  - GaussianNB
-  - SVC
-  - BaggingClassifier
-  - RandomForestClassifier
-  - GradientBoostingClassifier
-  - AdaBoostClassifier
-  - GridSearchCV
-  - metrics
+- sklearn
 - xgboost
 - catboost
 - lightgbm
+- imblearn
+- joblib
 - pickle
-
-# Exploratory Data Analysis
 
