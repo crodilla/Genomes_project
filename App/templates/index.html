@@ -3,18 +3,48 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data Science Project</title>
+    <meta name="description" content="">
+    <title>Genetic Disease in children</title>
     <link rel="stylesheet" href="../static/cover.css">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+   
+    </style>
 </head>
+    
+
 <body class="d-flex h-100 text-center text-white bg-dark image" style="width: 100%;">
 <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script> 
 <div class="cover-container text-center d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto mb-0 w-h">
         <div>
-            <h3 class="float-md-start mb-0">Genetic Disease in children</h3>
+            <h3 class="float-md-start mb-0">Genetic Disease Diagnosis in children</h3>
             <nav class="nav nav-masthead justify-content-center float-md-end">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-                <a class="nav-link" href="/params">Parameters</a>
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link active" aria-current="page" href="/params">Parameters</a>
                 <a class="nav-link" href="https://es.linkedin.com/in/cristina-rodilla-hernandez">Contact</a>
             </nav>
         </div>
@@ -28,7 +58,6 @@
             <label for="Patient_Age">Patient's age</label>
             <input type="range" id="slider1" name="Patient_Age" min="0" max="14" step="1">
             <span id="slider1_value">Valor: 4</span>
-            <input type="hidden" id="hidden_variable1" name="hidden_variable1" value="4">
             <br>
             <label for ="Mother_inherit">Inherited from mother</label>
             <select id="Mother_inherit" name="Mother_inherit" required="required">
@@ -45,17 +74,14 @@
             <label for="Blood_cell_count">Blood cell count (mcL)</label>
             <input type="range" id="slider2" name="Blood_cell_count" min="4" max="6" step="1">
             <span id="slider2_value">Valor: 4</span>
-            <input type="hidden" id="hidden_variable2" name="hidden_variable2" value="4">
             <br>
             <label for="Mother_age">Mother's age</label>
-            <input type="range" id="slider3" name="Mother_age" min="18" max="60" step="1">
+            <input type="range" id="slider3" name="Mother_age" min="18" max="55" step="1">
             <span id="slider3_value">Valor: 34</span>
-            <input type="hidden" id="hidden_variable3" name="hidden_variable3" value="34">
             <br>
             <label for="Father_age">Father's age</label>
             <input type="range" id="slider4" name="Father_age" min="18" max="70" step="1">
             <span id="slider4_value">Valor: 40</span>
-            <input type="hidden" id="hidden_variable4" name="hidden_variable4" value="40">
             <br>
             <label for="Status">Status</label>
             <select id="Status" name="Status" required="required">
@@ -121,7 +147,6 @@
             <label for="Number_abortions">Number of abortions</label>
             <input type="range" id="slider5" name="Number_abortions" min="0" max="5" step="1">
             <span id="slider5_value">Valor: 2</span>
-            <input type="hidden" id="hidden_variable5" name="hidden_variable5" value="2">
             <br>
             <label for ="Birth_defects">Birth defects</label>
             <select id="Birth_defects" name="Birth_defects" required="required">
@@ -132,7 +157,6 @@
             <label for="WBC_count">WBC count</label>
             <input type="range" id="slider6" name="WBC_count" min="3" max="12" step="1">
             <span id="slider6_value">Valor: 6</span>
-            <input type="hidden" id="hidden_variable6" name="hidden_variable6" value="6">
             <br>
             <label for="Blood_test">Blood test</label>
             <select id="Blood_test" name="Blood_test" required="required">
@@ -183,56 +207,56 @@
         <script>
             const slider1 = document.getElementById("slider1");
             const slider1Value = document.getElementById("slider1_value");
-            const hiddenVariable1 = document.getElementById("hidden_variable1");
+            
     
             slider1.oninput = function() {
                 slider1Value.textContent = `Valor: ${slider1.value}`;
-                hiddenVariable1.value = slider1.value;
+            
             }
     
             const slider2 = document.getElementById("slider2");
             const slider2Value = document.getElementById("slider2_value");
-            const hiddenVariable2 = document.getElementById("hidden_variable2");
+            
     
             slider2.oninput = function() {
                 slider2Value.textContent = `Valor: ${slider2.value}`;
-                hiddenVariable2.value = slider2.value;
+                
             }
     
             const slider3 = document.getElementById("slider3");
             const slider3Value = document.getElementById("slider3_value");
-            const hiddenVariable3 = document.getElementById("hidden_variable3");
+            
     
             slider3.oninput = function() {
                 slider3Value.textContent = `Valor: ${slider3.value}`;
-                hiddenVariable3.value = slider3.value;
+                
             }
 
             const slider4 = document.getElementById("slider4");
             const slider4Value = document.getElementById("slider4_value");
-            const hiddenVariable4 = document.getElementById("hidden_variable4");
+            
     
             slider4.oninput = function() {
                 slider4Value.textContent = `Valor: ${slider4.value}`;
-                hiddenVariable4.value = slider4.value;
+                
             }
 
             const slider5 = document.getElementById("slider5");
             const slider5Value = document.getElementById("slider5_value");
-            const hiddenVariable5 = document.getElementById("hidden_variable5");
+            
     
             slider5.oninput = function() {
                 slider5Value.textContent = `Valor: ${slider5.value}`;
-                hiddenVariable5.value = slider5.value;
+                
             }
 
             const slider6 = document.getElementById("slider6");
             const slider6Value = document.getElementById("slider6_value");
-            const hiddenVariable6 = document.getElementById("hidden_variable6");
+            
     
             slider6.oninput = function() {
                 slider6Value.textContent = `Valor: ${slider6.value}`;
-                hiddenVariable6.value = slider6.value;
+                
             }
         </script>
         

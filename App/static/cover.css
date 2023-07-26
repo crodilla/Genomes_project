@@ -6,7 +6,7 @@ body {
   background-position: center center;
   background-attachment: fixed;
   margin: 0;
-  padding: 10;
+  padding: 5px;
   text-align: center;
   color: rgb(18, 18, 18)
 }
@@ -34,8 +34,9 @@ nav {
 
 /* Main content */
 main {
-  padding: 200px;
+  padding: 150px;
   text-align: center;
+  color: rgb(18, 18, 18);
   background: rgba(252, 252, 252, 0.6);
 }
 
